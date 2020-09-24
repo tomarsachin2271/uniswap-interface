@@ -27,6 +27,7 @@ const AppWrapper = styled.div`
   flex-flow: column;
   align-items: flex-start;
   overflow-x: hidden;
+  background: '#F3F4FB';
 `
 
 const HeaderWrapper = styled.div`

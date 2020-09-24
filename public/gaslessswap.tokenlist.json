@@ -1,0 +1,18 @@
+{
+    "name": "Biconomy",
+    "logoURI": "https://biconomy-header.nyc3.digitaloceanspaces.com/Black_750_icon.png",
+    "keywords": ["biconomy", "gasless", "metatransaction"],
+    "timestamp": "2020-09-21T01:40:34.305Z",
+    "tokens": [
+      {
+        "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "chainId": 1,
+        "decimals": 18,
+        "logoURI":
+          "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
+        "name": "Dai Stablecoin",
+        "symbol": "DAI"
+      }
+    ],
+    "version": { "major": 0, "minor": 0, "patch": 0 }
+  }

@@ -1,7 +1,7 @@
 import { createReducer } from '@reduxjs/toolkit'
 import { getVersionUpgrade, VersionUpgrade } from '@uniswap/token-lists'
 import { TokenList } from '@uniswap/token-lists/dist/types'
-import { DEFAULT_LIST_OF_LISTS, DEFAULT_TOKEN_LIST_URL } from '../../constants/lists'
+import { DEFAULT_LIST_OF_LISTS, DEFAULT_TOKEN_LIST_URL, BICONOMY_DEFAULT_LIST } from '../../constants/lists'
 import { updateVersion } from '../global/actions'
 import { acceptListUpdate, addList, fetchTokenList, removeList, selectList } from './actions'
 import UNISWAP_DEFAULT_LIST from '@uniswap/default-token-list'
@@ -38,7 +38,7 @@ const initialState: ListsState = {
     }, {}),
     [DEFAULT_TOKEN_LIST_URL]: {
       error: null,
-      current: UNISWAP_DEFAULT_LIST,
+      current: BICONOMY_DEFAULT_LIST,
       loadingRequestId: null,
       pendingUpdate: null
     }
@@ -46,8 +46,9 @@ const initialState: ListsState = {
   selectedListUrl: undefined
 }
 
-export default createReducer(initialState, builder =>
-  builder
+export default createReducer(initialState, builder => {
+  console.log(UNISWAP_DEFAULT_LIST)
+  return builder
     .addCase(fetchTokenList.pending, (state, { payload: { requestId, url } }) => {
       state.byUrl[url] = {
         current: null,
@@ -155,4 +156,4 @@ export default createReducer(initialState, builder =>
 
       state.lastInitializedDefaultListOfLists = DEFAULT_LIST_OF_LISTS
     })
-)
+})
